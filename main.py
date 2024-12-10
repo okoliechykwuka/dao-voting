@@ -657,7 +657,7 @@ def execute(context: ExecuteContext, req: ExecuteRequestBody) -> ExecuteResponse
         
         # Handle different commands
         try:
-            if input_lower in ['hello', 'hi', 'hey']:
+            if input_lower in ['start a new vote', 'begin dao session', 'initiate governance','reset voting session']:
                 response_text = handle_hello()
                 redis_client.delete(f"user_state:{session_token}")
             elif input_lower == '/create_proposal':
